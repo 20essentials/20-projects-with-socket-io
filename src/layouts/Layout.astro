@@ -1,7 +1,7 @@
 ---
 import '@/styles/global.css';
 import { baseUrl } from '@/utils/functions';
-const favicon = baseUrl('/assets/favicon.webp')
+const favicon = baseUrl('/assets/favicon.webp');
 ---
 
 <!doctype html>
@@ -23,16 +23,39 @@ const favicon = baseUrl('/assets/favicon.webp')
     position: fixed;
     inset: 0;
     z-index: -10;
-    height: 100%;
+    min-height: 100vh;
     width: 100%;
-    background-color: white;
-    background: radial-gradient(
-      125% 125% at 50% 10%,
-      #fff 40%,
-      var(--global-blue) 100%
-    );
+    background-color: #000;
+  }
+
+  :global(.star) {
+    position: absolute;
+    top: 0;
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
   }
 </style>
+
+<script>
+  import { $ } from '@/utils/functions';
+  const $container = $('.background-div') as HTMLElement;
+
+  function stars() {
+    let e = document.createElement('div');
+    e.setAttribute('class', 'star');
+    $container.appendChild(e);
+    e.style.left = Math.random() * +innerWidth + 'px';
+
+    setTimeout(function () {
+      $container.removeChild(e);
+    }, 5000);
+  }
+
+  setInterval(function () {
+    stars();
+  }, 100);
+</script>
 
 <!-- <script>
   window.addEventListener('resize', e => {

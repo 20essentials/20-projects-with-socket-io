@@ -1,152 +1,135 @@
 ---
+import { baseUrl } from "@/utils/functions";
+
 const arrayCards = [
   {
-    title: 'Calendar 2024',
-    repo: 'https://github.com/20essentials/project-000-046',
-    web: 'https://20essentials.github.io/project-000-046/',
-    localImage: './assets/n46.avif',
-    id: '001'
+    title: "Mono Chat",
+    repo: "https://github.com/20essentials/mono-chat",
+    localImage: "/assets/mono-chat.avif",
+    id: "001"
   },
   {
-    title: 'Circle Animation',
-    repo: 'https://github.com/20essentials/project-000-027',
-    web: 'https://20essentials.github.io/project-000-027/',
-    localImage: './assets/n27.avif',
-    id: '002'
+    title: "Upload Files",
+    repo: "https://github.com/20essentials/upload-files",
+    localImage: "/assets/upload-files.avif",
+    id: "002"
   },
   {
-    title: 'Bosque Fondal',
-    repo: 'https://github.com/20essentials/project-000-820',
-    web: 'https://20essentials.github.io/project-000-820/',
-    localImage: './assets/n820.avif',
-    id: '003'
+    title: "Number Of Users Connected",
+    repo: "https://github.com/20essentials/number-of-users-connected",
+    localImage: "/assets/number-of-users-connected.avif",
+    id: "003"
   },
   {
-    title: 'Circular ShortCut',
-    repo: 'https://github.com/20essentials/project-000-012',
-    web: 'https://20essentials.github.io/project-000-012/',
-    localImage: './assets/n12.avif',
-    id: '004'
+    title: "Chat End To End",
+    repo: "https://github.com/20essentials/chat-end-to-end",
+    localImage: "/assets/chat-end-to-end.avif",
+    id: "004"
   },
   {
-    title: 'Dominic Blog',
-    repo: 'https://github.com/20essentials/project-000-001',
-    web: 'https://20essentials.github.io/project-000-001/',
-    localImage: './assets/n1.avif',
-    id: '005'
+    title: "Tic Tac Toe Two Players",
+    repo: "https://github.com/20essentials/tic-tac-toe-two-players",
+    localImage: "/assets/tic-tac-toe-two-players.avif",
+    id: "005"
   },
   {
-    title: 'Object View Box',
-    repo: 'https://github.com/20essentials/project-000-044',
-    web: 'https://20essentials.github.io/project-000-044/',
-    localImage: './assets/n44.avif',
-    id: '006'
+    title: "Basic WebSocket Client",
+    repo: "https://github.com/20essentials/basic-websocket-client",
+    localImage: "/assets/basic-websocket-client.avif",
+    id: "006"
   },
   {
-    title: 'Cumul Background',
-    repo: 'https://github.com/20essentials/project-000-852',
-    web: 'https://20essentials.github.io/project-000-852/',
-    localImage: './assets/n852.avif',
-    id: '007'
+    title: "ToDo With Socket.io",
+    repo: "https://github.com/20essentials/todo-with-socket.io",
+    localImage: "/assets/todo-with-socket-io.avif",
+    id: "007"
   },
   {
-    title: 'Popover Target',
-    repo: 'https://github.com/20essentials/project-000-854',
-    web: 'https://20essentials.github.io/project-000-854/',
-    localImage: './assets/n854.avif',
-    id: '008'
+    title: "Custom Parsers",
+    repo: "https://github.com/20essentials/custom-parsers",
+    localImage: "/assets/custom-parsers.avif",
+    id: "008"
   },
   {
-    title: 'Mixin Bacground',
-    repo: 'https://github.com/20essentials/project-000-551',
-    web: 'https://20essentials.github.io/project-000-551/',
-    localImage: './assets/n551.avif',
-    id: '009'
+    title: "Collaborative Whiteboard",
+    repo: "https://github.com/20essentials/collaborative-whiteboard",
+    localImage: "/assets/collaborative-whiteboard.avif",
+    id: "009"
   },
   {
-    title: 'Razim Hover',
-    repo: 'https://github.com/20essentials/project-000-504',
-    web: 'https://20essentials.github.io/project-000-504/',
-    localImage: './assets/n504.avif',
-    id: '010'
+    title: "Tweet Stream",
+    repo: "https://github.com/20essentials/tweet-stream",
+    localImage: "/assets/tweet-stream.avif",
+    id: "010"
   },
   {
-    title: 'Ink Fondo',
-    repo: 'https://github.com/20essentials/project-000-818',
-    web: 'https://20essentials.github.io/project-000-818/',
-    localImage: './assets/n818.avif',
-    id: '011'
+    title: "Realtime Stream",
+    repo: "https://github.com/20essentials/streaming-videoplayer",
+    localImage: "/assets/streaming-videoplayer.avif",
+    id: "011"
   },
   {
-    title: 'MiniBlog Tech',
-    repo: 'https://github.com/20essentials/project-000-002',
-    web: 'https://20essentials.github.io/project-000-002/',
-    localImage: './assets/n2.avif',
-    id: '012'
+    title: "Mensajes Privados Con Redis",
+    repo: "https://github.com/20essentials/mensajes-privados-con-redis",
+    localImage: "/assets/mensajes-privados-con-redis.avif",
+    id: "012"
   },
   {
-    title: 'Hibu Pattern',
-    repo: 'https://github.com/20essentials/project-000-810',
-    web: 'https://20essentials.github.io/project-000-810/',
-    localImage: './assets/n810.avif',
-    id: '013'
+    title: "Connection State Recovery",
+    repo: "https://github.com/20essentials/connection-state-recovery",
+    localImage: "/assets/connection-state-recovery.avif",
+    id: "013"
   },
   {
-    title: 'Glowing Text',
-    repo: 'https://github.com/20essentials/project-000-801',
-    web: 'https://20essentials.github.io/project-000-801/',
-    localImage: './assets/n801.avif',
-    id: '014'
+    title: "Current User Origin",
+    repo: "https://github.com/20essentials/current-user-origin",
+    localImage: "/assets/current-user-origin.avif",
+    id: "014"
   },
   {
-    title: 'Pixelated Image',
-    repo: 'https://github.com/20essentials/project-000-509',
-    web: 'https://20essentials.github.io/project-000-509/',
-    localImage: './assets/n509.avif',
-    id: '015'
+    title: "React Native And Socket Io Simple Example",
+    repo: "https://github.com/20essentials/react-native-and-socket-io-simple-example",
+    localImage: "/assets/react-native-and-socket-io-simple-example.avif",
+    id: "015"
   },
   {
-    title: 'Image Animation',
-    repo: 'https://github.com/20essentials/project-000-858',
-    web: 'https://20essentials.github.io/project-000-858/',
-    localImage: './assets/n858.avif',
-    id: '016'
+    title: "Socket Io And Express Session Example",
+    repo: "https://github.com/20essentials/socket-io-and-express-session-example",
+    localImage: "/assets/socket-io-and-express-session-example.avif",
+    id: "016"
   },
   {
-    title: 'Standalone Background',
-    repo: 'https://github.com/20essentials/project-000-507',
-    web: 'https://20essentials.github.io/project-000-507/',
-    localImage: './assets/n507.avif',
-    id: '017'
+    title: "Webtransport Example",
+    repo: "https://github.com/20essentials/webtransport-example",
+    localImage: "/assets/webtransport-example.avif",
+    id: "017"
   },
   {
-    title: 'Infinity Background',
-    repo: 'https://github.com/20essentials/project-000-506',
-    web: 'https://20essentials.github.io/project-000-506/',
-    localImage: './assets/n506.avif',
-    id: '018'
+    title: "Passport Login",
+    repo: "https://github.com/20essentials/passport-login",
+    localImage: "/assets/passport-login.avif",
+    id: "018"
   },
   {
-    title: 'Viewport Effect',
-    repo: 'https://github.com/20essentials/project-000-872',
-    web: 'https://20essentials.github.io/project-000-872/',
-    localImage: './assets/n872.avif',
-    id: '019'
+    title: "Next App Router And Socket Io",
+    repo: "https://github.com/20essentials/next-app-router-and-socket-io",
+    localImage: "/assets/next-app-router-and-socket-io.avif",
+    id: "019"
   },
   {
-    title: 'View() + Scale()',
-    repo: 'https://github.com/20essentials/project-000-875',
-    web: 'https://20essentials.github.io/project-000-875/',
-    localImage: './assets/n875.avif',
-    id: '020'
+    title: "Jwt And Socket Io",
+    repo: "https://github.com/20essentials/jwt-and-socket-io",
+    localImage: "/assets/jwt-and-socket-io.avif",
+    id: "020"
   }
 ];
+
 ---
 
 <section>
   {
-    arrayCards.map(({ id, localImage, repo, title, web }) => (
-      <aside class='card'></aside>
+    arrayCards.map(({ id, localImage, repo, title }) => (
+      <aside class='card' />
     ))
   }
 </section>
