@@ -26,14 +26,42 @@ const favicon = baseUrl('/assets/favicon.webp');
     min-height: 100vh;
     width: 100%;
     background-color: #000;
+    overflow: hidden;
   }
 
   :global(.star) {
     position: absolute;
     top: 0;
-    background-color: #fff;
+    color: #fff;
     width: 20px;
     height: 20px;
+    animation: animate 5s linear forwards;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      background-size: cover;
+      background-image: url('/assets/star.svg');
+      filter: drop-shadow(0 0 5px #fffc) drop-shadow(0 0 20px #fffc)
+        drop-shadow(0 0 50px #fffc);
+    }
+  }
+
+  @keyframes animate {
+    0% {
+      opacity: 1;
+      transform: translateY(-10vh) rotate(0deg);
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100vh) rotate(360deg);
+    }
   }
 </style>
 
@@ -45,7 +73,12 @@ const favicon = baseUrl('/assets/favicon.webp');
     let e = document.createElement('div');
     e.setAttribute('class', 'star');
     $container.appendChild(e);
+    const size = Math.random() * 2.5 + 1;
+    const duration = Math.random() * 3;
     e.style.left = Math.random() * +innerWidth + 'px';
+    e.style.width = `${size}vmax`;
+    e.style.height = `${size}vmax`;
+    e.style.animationDuration = `${duration + 2}s`;
 
     setTimeout(function () {
       $container.removeChild(e);

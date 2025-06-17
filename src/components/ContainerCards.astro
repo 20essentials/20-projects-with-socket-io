@@ -1,135 +1,164 @@
 ---
-import { baseUrl } from "@/utils/functions";
+import { baseUrl } from '@/utils/functions';
 
 const arrayCards = [
   {
-    title: "Mono Chat",
-    repo: "https://github.com/20essentials/mono-chat",
-    localImage: "/assets/mono-chat.avif",
-    id: "001"
+    title: 'Realtime Stream',
+    repo: 'https://github.com/20essentials/streaming-videoplayer',
+    localImage: '/assets/streaming-videoplayer.avif',
+    id: '001',
+    colors: ['#5ddcff', '#3c67e3', '#4e00c2']
   },
   {
-    title: "Upload Files",
-    repo: "https://github.com/20essentials/upload-files",
-    localImage: "/assets/upload-files.avif",
-    id: "002"
+    title: 'Upload Files',
+    repo: 'https://github.com/20essentials/upload-files',
+    localImage: '/assets/upload-files.avif',
+    id: '002',
+    colors: ['#ff9a9e', '#fad0c4', '#fad0c4']
   },
   {
-    title: "Number Of Users Connected",
-    repo: "https://github.com/20essentials/number-of-users-connected",
-    localImage: "/assets/number-of-users-connected.avif",
-    id: "003"
+    title: 'Number Of Users Connected',
+    repo: 'https://github.com/20essentials/number-of-users-connected',
+    localImage: '/assets/number-of-users-connected.avif',
+    id: '003',
+    colors: ['#a1c4fd', '#c2e9fb', '#d4fc79']
   },
   {
-    title: "Chat End To End",
-    repo: "https://github.com/20essentials/chat-end-to-end",
-    localImage: "/assets/chat-end-to-end.avif",
-    id: "004"
+    title: 'Chat End To End',
+    repo: 'https://github.com/20essentials/chat-end-to-end',
+    localImage: '/assets/chat-end-to-end.avif',
+    id: '004',
+    colors: ['#f093fb', '#f5576c', '#4facfe']
   },
   {
-    title: "Tic Tac Toe Two Players",
-    repo: "https://github.com/20essentials/tic-tac-toe-two-players",
-    localImage: "/assets/tic-tac-toe-two-players.avif",
-    id: "005"
+    title: 'Tic Tac Toe Two Players',
+    repo: 'https://github.com/20essentials/tic-tac-toe-two-players',
+    localImage: '/assets/tic-tac-toe-two-players.avif',
+    id: '005',
+    colors: ['#ffecd2', '#fcb69f', '#ff9a8b']
   },
   {
-    title: "Basic WebSocket Client",
-    repo: "https://github.com/20essentials/basic-websocket-client",
-    localImage: "/assets/basic-websocket-client.avif",
-    id: "006"
+    title: 'Basic WebSocket Client',
+    repo: 'https://github.com/20essentials/basic-websocket-client',
+    localImage: '/assets/basic-websocket-client.avif',
+    id: '006',
+    colors: ['#84fab0', '#8fd3f4', '#a6c0fe']
   },
   {
-    title: "ToDo With Socket.io",
-    repo: "https://github.com/20essentials/todo-with-socket.io",
-    localImage: "/assets/todo-with-socket-io.avif",
-    id: "007"
+    title: 'ToDo With Socket.io',
+    repo: 'https://github.com/20essentials/todo-with-socket.io',
+    localImage: '/assets/todo-with-socket-io.avif',
+    id: '007',
+    colors: ['#fccb90', '#d57eeb', '#a18cd1']
   },
   {
-    title: "Custom Parsers",
-    repo: "https://github.com/20essentials/custom-parsers",
-    localImage: "/assets/custom-parsers.avif",
-    id: "008"
+    title: 'Custom Parsers',
+    repo: 'https://github.com/20essentials/custom-parsers',
+    localImage: '/assets/custom-parsers.avif',
+    id: '008',
+    colors: ['#f6d365', '#fda085', '#ff9a8b']
   },
   {
-    title: "Collaborative Whiteboard",
-    repo: "https://github.com/20essentials/collaborative-whiteboard",
-    localImage: "/assets/collaborative-whiteboard.avif",
-    id: "009"
+    title: 'Collaborative Whiteboard',
+    repo: 'https://github.com/20essentials/collaborative-whiteboard',
+    localImage: '/assets/collaborative-whiteboard.avif',
+    id: '009',
+    colors: ['#43e97b', '#38f9d7', '#57c1eb']
   },
   {
-    title: "Tweet Stream",
-    repo: "https://github.com/20essentials/tweet-stream",
-    localImage: "/assets/tweet-stream.avif",
-    id: "010"
+    title: 'Tweet Stream',
+    repo: 'https://github.com/20essentials/tweet-stream',
+    localImage: '/assets/tweet-stream.avif',
+    id: '010',
+    colors: ['#fdfcfb', '#e2d1c3', '#ffdde1']
   },
   {
-    title: "Realtime Stream",
-    repo: "https://github.com/20essentials/streaming-videoplayer",
-    localImage: "/assets/streaming-videoplayer.avif",
-    id: "011"
+    title: 'Mono Chat',
+    repo: 'https://github.com/20essentials/mono-chat',
+    localImage: '/assets/mono-chat.avif',
+    id: '011',
+    colors: ['#4facfe', '#00f2fe', '#43e97b']
   },
   {
-    title: "Mensajes Privados Con Redis",
-    repo: "https://github.com/20essentials/mensajes-privados-con-redis",
-    localImage: "/assets/mensajes-privados-con-redis.avif",
-    id: "012"
+    title: 'Mensajes Privados Con Redis',
+    repo: 'https://github.com/20essentials/mensajes-privados-con-redis',
+    localImage: '/assets/mensajes-privados-con-redis.avif',
+    id: '012',
+    colors: ['#30cfd0', '#330867', '#667eea']
   },
   {
-    title: "Connection State Recovery",
-    repo: "https://github.com/20essentials/connection-state-recovery",
-    localImage: "/assets/connection-state-recovery.avif",
-    id: "013"
+    title: 'Connection State Recovery',
+    repo: 'https://github.com/20essentials/connection-state-recovery',
+    localImage: '/assets/connection-state-recovery.avif',
+    id: '013',
+    colors: ['#f7971e', '#ffd200', '#f6d365']
   },
   {
-    title: "Current User Origin",
-    repo: "https://github.com/20essentials/current-user-origin",
-    localImage: "/assets/current-user-origin.avif",
-    id: "014"
+    title: 'Current User Origin',
+    repo: 'https://github.com/20essentials/current-user-origin',
+    localImage: '/assets/current-user-origin.avif',
+    id: '014',
+    colors: ['#c2e9fb', '#81ecec', '#74ebd5']
   },
   {
-    title: "React Native And Socket Io Simple Example",
-    repo: "https://github.com/20essentials/react-native-and-socket-io-simple-example",
-    localImage: "/assets/react-native-and-socket-io-simple-example.avif",
-    id: "015"
+    title: 'React Native And Socket Io Simple Example',
+    repo: 'https://github.com/20essentials/react-native-and-socket-io-simple-example',
+    localImage: '/assets/react-native-and-socket-io-simple-example.avif',
+    id: '015',
+    colors: ['#ff6a00', '#ee0979', '#ff6a88']
   },
   {
-    title: "Socket Io And Express Session Example",
-    repo: "https://github.com/20essentials/socket-io-and-express-session-example",
-    localImage: "/assets/socket-io-and-express-session-example.avif",
-    id: "016"
+    title: 'Socket Io And Express Session Example',
+    repo: 'https://github.com/20essentials/socket-io-and-express-session-example',
+    localImage: '/assets/socket-io-and-express-session-example.avif',
+    id: '016',
+    colors: ['#7f7fd5', '#86fde8', '#91eae4']
   },
   {
-    title: "Webtransport Example",
-    repo: "https://github.com/20essentials/webtransport-example",
-    localImage: "/assets/webtransport-example.avif",
-    id: "017"
+    title: 'Webtransport Example',
+    repo: 'https://github.com/20essentials/webtransport-example',
+    localImage: '/assets/webtransport-example.avif',
+    id: '017',
+    colors: ['#e0c3fc', '#8ec5fc', '#a1c4fd']
   },
   {
-    title: "Passport Login",
-    repo: "https://github.com/20essentials/passport-login",
-    localImage: "/assets/passport-login.avif",
-    id: "018"
+    title: 'Passport Login',
+    repo: 'https://github.com/20essentials/passport-login',
+    localImage: '/assets/passport-login.avif',
+    id: '018',
+    colors: ['#a770ef', '#cf8bf3', '#fdb99b']
   },
   {
-    title: "Next App Router And Socket Io",
-    repo: "https://github.com/20essentials/next-app-router-and-socket-io",
-    localImage: "/assets/next-app-router-and-socket-io.avif",
-    id: "019"
+    title: 'Next App Router And Socket Io',
+    repo: 'https://github.com/20essentials/next-app-router-and-socket-io',
+    localImage: '/assets/next-app-router-and-socket-io.avif',
+    id: '019',
+    colors: ['#fbc2eb', '#a6c1ee', '#d4fc79']
   },
   {
-    title: "Jwt And Socket Io",
-    repo: "https://github.com/20essentials/jwt-and-socket-io",
-    localImage: "/assets/jwt-and-socket-io.avif",
-    id: "020"
+    title: 'Jwt And Socket Io',
+    repo: 'https://github.com/20essentials/jwt-and-socket-io',
+    localImage: '/assets/jwt-and-socket-io.avif',
+    id: '020',
+    colors: ['#d299c2', '#fef9d7', '#a1c4fd']
   }
 ];
-
 ---
 
 <section>
   {
-    arrayCards.map(({ id, localImage, repo, title }) => (
-      <aside class='card' />
+    arrayCards.map(({ id, localImage, repo, title, colors }) => (
+      <a
+        href={repo}
+        class='card'
+        style={{
+          '--color1': `${colors[0]}`,
+          '--color2': `${colors[1]}`,
+          '--color3': `${colors[2]}`
+        }}
+      >
+        <img src={baseUrl(localImage)} alt={title} />
+      </a>
     ))
   }
 </section>
@@ -142,5 +171,81 @@ const arrayCards = [
     gap: 2.2vmax;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(17vmax, 1fr));
+  }
+
+  @property --rotate {
+    syntax: '<angle>';
+    initial-value: 132deg;
+    inherits: false;
+  }
+
+  .card {
+    background: #000;
+    aspect-ratio: 16 / 11;
+    width: 16vmax;
+    position: relative;
+    padding: 0.5vmax;
+    border-radius: 0.6vmax;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    color: rgb(88 199 250 / 0%);
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      object-position: center;
+    }
+  }
+
+  .card::before {
+    content: '';
+    inset: -0.4vmax;
+    border-radius: inherit;
+    background-image: linear-gradient(
+      var(--rotate),
+      var(--color1, #5ddcff),
+      var(--color2, #3c67e3) 43%,
+      var(--color3, #4e00c2)
+    );
+    position: absolute;
+    z-index: -1;
+    animation: spin 2.5s linear infinite;
+  }
+
+  .card::after {
+    position: absolute;
+    content: '';
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate),
+      #5ddcff,
+      #3c67e3 43%,
+      #4e00c2
+    );
+    opacity: 1;
+    transition: opacity 0.5s;
+    animation: spin 2.5s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
   }
 </style>

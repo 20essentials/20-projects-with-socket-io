@@ -16,11 +16,11 @@ img {
 }
 
 :root {
-  --global-blue: yellowgreen;
+  --global-blue: springgreen;
   --gradient-btn: linear-gradient(
     to bottom,
     var(--global-blue),
-    springgreen,
+    white,
     var(--global-blue)
   );
 }
@@ -32,8 +32,8 @@ button {
 }
 
 @font-face {
-  font-family: 'AnotherDanger';
-  src: url('./assets/AnotherDanger.otf') format('opentype');
+  font-family: 'ropest';
+  src: url('./assets/ropest.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -47,7 +47,7 @@ body {
 
 h1,
 h2 {
-  font-family: 'AnotherDanger';
+  font-family: 'ropest';
 }
 
 body {
