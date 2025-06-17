@@ -149,6 +149,7 @@ const arrayCards = [
   {
     arrayCards.map(({ id, localImage, repo, title, colors }) => (
       <a
+        title={title}
         href={repo}
         class='card'
         style={{
@@ -171,6 +172,17 @@ const arrayCards = [
     gap: 2.2vmax;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(17vmax, 1fr));
+    place-content: center;
+    place-items: center;
+  }
+
+  @keyframes growCard {
+    0% {
+      transform: rotate(0deg) translateY(5vmax) scale(0);
+    }
+    100% {
+      transform: rotate(360deg) translateY(0) scale(1);
+    }
   }
 
   @property --rotate {
@@ -192,6 +204,9 @@ const arrayCards = [
     display: flex;
     color: rgb(88 199 250 / 0%);
     cursor: pointer;
+    animation: growCard auto ease forwards;
+    animation-timeline: view();
+    animation-range: entry -10% entry 25%;
 
     img {
       width: 100%;
