@@ -27,6 +27,7 @@ const favicon = baseUrl('/assets/favicon.webp');
     width: 100%;
     background-color: #000;
     overflow: hidden;
+    pointer-events: none;
   }
 
   :global(.star) {
@@ -44,9 +45,13 @@ const favicon = baseUrl('/assets/favicon.webp');
       height: 100%;
       inset: 0;
       background-size: cover;
-      background-image: url('assets/star.svg');
+      background-image: url('/assets/star.svg');
       filter: drop-shadow(0 0 5px #fffc) drop-shadow(0 0 20px #fffc)
         drop-shadow(0 0 50px #fffc);
+
+      @media (width <= 1111px) and (hover: none) {
+        filter: drop-shadow(0 0 10px #fffc) drop-shadow(0 0 20px #fffc);
+      }
     }
   }
 
@@ -67,31 +72,56 @@ const favicon = baseUrl('/assets/favicon.webp');
 
 <script>
   import { $ } from '@/utils/functions';
+
   const $container = $('.background-div') as HTMLElement;
 
-  function stars() {
-    let e = document.createElement('div');
-    e.setAttribute('class', 'star');
-    $container.appendChild(e);
-    const size = Math.random() * 2.5 + 1;
-    const duration = Math.random() * 3;
-    e.style.left = Math.random() * +innerWidth + 'px';
-    e.style.width = `${size}vmax`;
-    e.style.height = `${size}vmax`;
-    e.style.animationDuration = `${duration + 2}s`;
+  const isMobile = window.matchMedia('(max-width: 1111px)').matches;
+  const MAX_STARS = isMobile ? 100 : 500;
 
-    setTimeout(function () {
-      $container.removeChild(e);
-    }, 5000);
+  let starCount = 0;
+  let lastSpawn = 0;
+  const SPAWN_INTERVAL = 100; // ms
+
+  function createStar() {
+    if (starCount >= MAX_STARS) return;
+
+    const e = document.createElement('div');
+    e.className = 'star';
+
+    const size = Math.random() * 2.5 + 1;
+    const duration = Math.random() * 3 + 2;
+
+    e.style.cssText = `
+    left: ${Math.random() * innerWidth}px;
+    width: ${size}vmax;
+    height: ${size}vmax;
+    animation-duration: ${duration}s;
+  `;
+
+    $container.appendChild(e);
+    starCount++;
+
+    setTimeout(() => {
+      if (e.parentNode) {
+        e.remove();
+        starCount--;
+      }
+    }, duration * 1000);
   }
 
-  setInterval(function () {
-    stars();
-  }, 100);
-</script>
+  function loop(timestamp: number) {
+    if (document.hidden) {
+      requestAnimationFrame(loop);
+      return;
+    }
 
-<!-- <script>
-  window.addEventListener('resize', e => {
-    document.title = `${window.innerWidth}`;
-  });
-</script> -->
+    if (timestamp - lastSpawn > SPAWN_INTERVAL) {
+      createStar();
+      lastSpawn = timestamp;
+    }
+
+    requestAnimationFrame(loop);
+  }
+
+  requestAnimationFrame(loop);
+</script>
